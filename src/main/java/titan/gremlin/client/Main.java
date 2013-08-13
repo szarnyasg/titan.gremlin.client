@@ -7,6 +7,7 @@ public class Main {
 	public static void main(String[] args) throws ScriptException {
 		if (args.length < 1) {
 			System.out.println("Usage: client <vertices|vertexpairs>");
+			return;
 		}
 
 		TitanQueries titanQueries = new TitanQueries();
