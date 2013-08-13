@@ -1,4 +1,4 @@
-package titan.gremlin.java.client;
+package titan.gremlin.client;
 
 import javax.script.Bindings;
 import javax.script.ScriptEngine;
