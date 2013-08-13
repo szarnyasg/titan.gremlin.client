@@ -54,8 +54,6 @@ public class TitanQueries {
 		final String script = "t = new Table(); g.V('type', 'Route').as('route').outE('ROUTE_ROUTEDEFINITION').inV.as('sensor').table(t).iterate(); t;";
 		
 		Object results = engine.eval(script, bindings);
-		System.out.println(results);
-		System.out.println(results.getClass());
 		
 		Table table = (Table) results;
 		for (Row<?> row : table) {
@@ -63,8 +61,9 @@ public class TitanQueries {
 			CacheVertex route = (CacheVertex) row.getColumn(0);
 			CacheVertex sensor = (CacheVertex) row.getColumn(1);
 			
-			printProperties("Route", route);
-			printProperties("Sensor", sensor);
+			System.out.println(route + " - " + sensor);
+			//printProperties("Route", route);
+			//printProperties("Sensor", sensor);
 		}
 	}
 
