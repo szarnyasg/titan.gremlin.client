@@ -21,10 +21,10 @@ public class TitanQueries {
 	protected ScriptEngine engine; 
 	protected Bindings bindings;
 	
-	public TitanQueries() {
+	public TitanQueries(final String host) {
 		Configuration conf = new BaseConfiguration();
 		conf.setProperty("storage.backend", "cassandra");
-		conf.setProperty("storage.hostname", "127.0.0.1");
+		conf.setProperty("storage.hostname", host);
 		TitanGraph g = TitanFactory.open(conf);
 
 		engine = new GremlinGroovyScriptEngine();

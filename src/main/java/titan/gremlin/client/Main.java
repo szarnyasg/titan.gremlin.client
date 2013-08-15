@@ -5,12 +5,13 @@ import javax.script.ScriptException;
 public class Main {
 
 	public static void main(String[] args) throws ScriptException {
-		if (args.length < 1) {
-			System.out.println("Usage: client <vertices|vertexpairs>");
+		if (args.length < 2) {
+			System.out.println("Usage: client HOST <vertices|vertexpairs>");
 			return;
 		}
 
-		TitanQueries titanQueries = new TitanQueries();
+		final String host = args[1];
+		TitanQueries titanQueries = new TitanQueries(host);
 		
 		switch (args[0]) {
 		case "vertices":
