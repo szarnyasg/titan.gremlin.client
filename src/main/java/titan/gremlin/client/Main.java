@@ -12,7 +12,7 @@ public class Main {
 
 		String host = "localhost";
 		if (args.length >= 2) {
-			host = "vcl0";
+			host = args[1];
 		}
 		
 		TitanQueries titanQueries = new TitanQueries(host);
